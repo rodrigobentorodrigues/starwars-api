@@ -18,9 +18,6 @@ public class DatabaseSeeder implements CommandLineRunner {
     @Autowired
     private PlanetAPIService planetAPIService;
     
-    @Autowired
-    private Logger logger;
-    
     @Override
     public void run(String... args) throws Exception {
         try {
