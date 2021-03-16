@@ -1,6 +1,8 @@
 package br.com.starwars.starwarsapi.models;
 
 import java.util.Objects;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -13,8 +15,14 @@ public class Planet {
 
     @Id
     private String id;
+    @NotEmpty(message = "Name is mandatory")
+    @Size(min = 2, max = 50, message = "Name must contain between 2 to 50 characters")
     private String name;
+    @NotEmpty(message = "Climate is mandatory")
+    @Size(min = 2, max = 100, message = "Climate must contain between 2 to 100 characters")
     private String climate;
+    @NotEmpty(message = "Terrain is mandatory")
+    @Size(min = 2, max = 100, message = "Terrain must contain between 2 to 100 characters")
     private String terrain;
     private int numberOfFilmsAppearances;
 
